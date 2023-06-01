@@ -1,0 +1,33 @@
+int diagonalDifference(vector<vector<int>> arr) {
+    
+    int i,j,sum1=0,sum2=0,o,diff,size;
+    size=arr.size();
+    for(i=0;i<size;i++)
+    {
+        for(j=0;j<size;j++)
+        {
+            cin >> arr[i][j];
+        }
+    }
+    for(i=0;i<size;i++)
+    {
+        for(j=0;j<size;j++)
+        {
+            if(i==j)
+            {
+                sum1 = sum1 + arr[i][j];
+            }
+        }
+    }
+    int z = size;
+    for(o=0;o<size;o++)
+    {
+        sum2 = sum2 + arr[o][--z];
+    }
+    diff = sum1-sum2;
+    if(diff<0)
+    {
+        diff=diff*-1;
+    }
+    return diff;
+}
